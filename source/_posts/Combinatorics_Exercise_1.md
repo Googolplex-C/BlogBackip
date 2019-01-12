@@ -1,6 +1,7 @@
 ---
 title: Combinatorics-Exercise-1
 mathjax: true
+comments: true
 category: 
     - 数学
     - 组合数学

@@ -7,11 +7,14 @@ tags:
     - 博客测试
 mathjax: true
 comments: true
+mermaid: true
 ---
 
 # 这是一篇测试用的文章
 
 测试：博客的各种功能
+
+<!-- more -->
 
 # 插入图片
 
@@ -26,9 +29,6 @@ comments: true
 
 
 {% asset_img cat.jpg %}
-
-以下是自动隐藏的内容。  
-<!-- more -->
 
 你真漂亮！  
 我的宝贝。
@@ -78,11 +78,20 @@ int main(){
 #include<iostream>
 
 int main(){
-	using namespace std;
-	
-	cout << "Fuck you" << endl;
-	return 0;
+​	using namespace std;
+​	
+​	cout << "Fuck you" << endl;
+​	return 0;
 }
 {% endcodeblock %}
 
+# 测试Mermaid
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
