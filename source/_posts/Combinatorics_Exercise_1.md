@@ -5,6 +5,7 @@ comments: true
 category: 
     - 数学
     - 组合数学
+    - 计数组合
 tags: 
     - 习题
     - 抽屉原理

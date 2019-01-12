@@ -146,6 +146,7 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
   overview: /overview || sitemap
+  guestbook: /guestbook || sticky-note-o
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
