@@ -1,5 +1,5 @@
 ---
-title: Combinatorics-Exercise-1
+title: Combinatorics Exercise 001
 mathjax: true
 comments: true
 category: 
@@ -158,4 +158,6 @@ $$
    直观而言，前 $i+1$ 个黑盒子的元素总数比前 $j$ 个白盒子的元素总数多 $2$ ，因此在重新装配的过程中，在前 $i+1$ 个黑盒子中存在至少两个元素，它们必将被 “抽补” 到第 $j+1$ 个白盒子及其（在序列 $\{A \}$ 中）之后的盒子中去；而这前 $i+1$ 个黑盒子中元素数最小的盒子的元素数 $\lvert B_{i+1} \rvert$ 比白盒子中具有最大元素数的白盒子的元素数目 $\lvert A_{j+1} \rvert$都大，于是这两个元素满足欲证命题所述性质.
 
 综上所述，命题成立.	
-Q.E.D.
+
+<p align="right"> Q.E.D. </p>
+

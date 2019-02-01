@@ -95,3 +95,9 @@ graph TD;
     C-->D;
 ```
 
+# 测试SVG
+
+```
+{% asset_img cat.svg %}
+```
+
