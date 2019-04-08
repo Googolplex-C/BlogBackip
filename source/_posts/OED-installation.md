@@ -5,7 +5,7 @@ top:
 mathjax: 
 category:
   - 手工实践
-  - 软件安装
+  - 装软件
 tags:
   - 英语词典
 comments:

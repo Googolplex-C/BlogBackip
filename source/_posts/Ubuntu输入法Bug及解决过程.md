@@ -5,6 +5,7 @@ top:
 mathjax: false
 category:
   - 手工实践
+  - 调Bug
 tags: Bug解决
 comments: true
 ---

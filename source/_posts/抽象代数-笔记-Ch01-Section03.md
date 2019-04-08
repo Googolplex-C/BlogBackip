@@ -144,8 +144,151 @@ $R$ 是关系：这是显然的，因为 $a^{-1}b$ 要么属于 $H$，要么不�
 $R$ 是等价关系，下面进行验证：
 
 1. 自反性：$\forall a \notin G, a^{-1}a  = e\in H$，因为子群中必有幺元；
-2. 对称性：若 $a\,R\,b$，集
+2. 对称性：若 $a\,R\,b$，即 $a^{-1}b \in H$，则 $(a^{-1}b)^{-1}=b^{-1}(a^{-1})^{-1}=b^{-1}a \in H$，从而 $b\,R\,a$
+3. 传递性：若 $a\,R\,b$, $b\,R\,c$，则 $a^{-1}b \in H$, $b^{-1}c \in H$，因为 $H<G$，于是 $(a^{-1}b)(b^{-1}c) \in H$，于是 $a\,R\,c$
 
+因此 $R$ 是等价关系
+
+我们再来证明 $\overline{a}=aH$：
+
+一方面，对于任何$h \in H$，我们有 $a^{-1}(ah)\in H$，因此 $a\,R\,ah$，即 $ah \in \overline{a}$，从而 $aH \subseteq \overline{a}$
+
+另一方面，对于一切 $b \in \overline{a}$，$a\,R\,b$，即$a^{-1}b \in H$，故 $b=a(a^{-1}b) \in aH$，故而 $\overline{a} \subseteq aH$
+
+<p align="right">Q.E.D.</p>
+
+由定理 1.3.4 可知，$\{aH\}$ 构成 $G$ 的分类，记作商集合 $G/R$ 或者 $G/H$，称为 $G$ 对子群 $H$ 的左商集，或者左陪集空间。
+
+同理可类似地定义右陪集空间
+
+##### 推论 1.3.5 
+对于 $a,b \in G$, $aH=bH$ 当且仅当 $a^{-1}b \in H$
+
+##### 定义 1.3.3 指数
+设 $H<G$，则左商集的势 $\left|G/H \right|$ 称为 $H$ 在 $G$ 中的指数，记作 $[G:H]$
+
+##### 注解
+定义 1.3.2 至此的记号一般是针对乘法群的，在加法群中，左陪集记为 $a+H$，关系 $R$ 的定义写作：$aRb$ 当且仅当 $b-a \in H$
+
+##### 例4
+$[\mathbb{Z}:m\mathbb{Z}]=m$，其中 $m \in \mathbb{N}$；  
+另有对于一切 $a \in \mathbb{Z}$，$a+m\mathbb{Z}=\{a+nm \mid n \in \mathbb{Z}\}$
+
+##### 定理 1.3.6 Lagrange定理
+设 $G$ 为有限群，且 $H<G$，则 $|G|= [G:H]\times |H|$
+
+*Proof*
+
+对于一切 $a \in G$，$H \rightarrow aH$ 这个映射是单射，另由消去律可知，这个映射是满射，从而 $|H|=|aH|$，设 $G$ 是 $[G:H]$ 个陪集的并，这些陪集并不相交，所以 $|G|=[G:H]\times |H|$
+
+<p align="right">Q.E.D.</p>
+
+##### 推论 1.3.7
+设 $G$ 是有限群，$H<G$，$K<G$，且 $H \subseteq K$ （从而 $H < K$），则 $[G:H]=[G:K]\times[K:H]$
+
+*Proof*
+
+由于 $K<G$ 以及 $H <K$，由 Lagrange 定理可知 $|G|=[G:K]\times |K| = [G:K]\times[K:H] \times |H|$
+
+同时因为 $H$ 是 $K$ 的子群，后者又同时是 $G$ 的子群，所以 $H$ 是 $G$ 的子群，由 Lagrange 定理可知 $|G| = [G:H] \times |H|$
+。
+
+于是消去 $|H|$ 可以得到，$[G:H]=[G:K]\times[K:H]$
+
+<p align="right">Q.E.D.</p>
+
+设 $H<G$，并有商集 $G/R$ 或者记作 $G/H$，如果我们要把商集加强为商集的话，我们还缺什么？没错，运算！
+这就要求运算 $R$ 是同余关系。
+
+我们继续引出下面的概念
+##### 定义 1.3.4
+设 $G$ 为群，$H<G$，称 $H$ 为 $G$ 的正规子群，若对于一切 $g \in G$，以及一切 $h \in H$，有 $ghg^{-1} \in H$，记为 $H \lhd G$
+
+##### 例5
+平凡子群必为正规子群；
+所谓平凡子群，就是指 $\{e\}$ 以及 $G$ 自身
+
+##### 例6
+若 $G$ 为 Abel 群，则任何一个子群都是正规子群
+
+##### 例7
+$\mathrm{SL}(\mathbb{V}) \lhd \mathrm{GL}(\mathbb{V})$
+
+证明也很简单，只需注意到 $|ABA^{-1}|=|A||B||A^{-1}|=|A||A^{-1}||B|=|B|$
+
+##### 定理 1.3.8 判定正规子群的方法
+
+设 $H <G$，则下列条件等价
+
+1. $H \lhd G$
+2. $\forall g \in G, gH=Hg$
+3. $\forall g_1,g_2 \in G,g_1H\cdot g_2H=g_1g_2H$，其中点表示笛卡尔积：$g_1H\cdot g_2H=\{g_1h_1g_2h_2 \mid h_1,h_2 \in H\}$
+
+*Proof*
+
+由命题1 证明 命题2：
+
+对于任何的 $g \in G$, $h \in H$, $ghg^{-1} \in H$，记 $ghg^{-1}$ 为 $h_1$，即 $gh= h_1g \in Hg$，故 $Hg \subseteq gH$。同理也可证 $gH \subseteq Hg$
+
+由命题2 证 命题3：
+
+$\forall h_1, h_2 \in H, h_1g_2 \in Hg_2 = g_2H$，存在 $h_1' \in H$，使得 $h_1g_2=g_2h_1'$，故 $g_1h_1g_2h_2=g_1g_2h_1'h_2 \in g_1g_2H$，故 $g_1Hg_2H \subset g_1g_2H$
+
+又对于任意的 $h \in H$, $g_1g_2h= g_1eg_2h \in g_1Hg_2H$，固有 $g_1g_2H \subseteq g_1Hg_2H$
+
+由命题3 证 命题1：
+已知 $H<G$，$\forall g \in G, h \in H, ghg^{-1}=ghg^{-1}e \in gH\cdot g^{-1}H$，由命题 3 可知，$gH\cdot g^{-1}H= gg^{-1}H=H$，故 $H \lhd G$
+
+<p align="right">Q.E.D.</p>
+
+邓老师语录：证明正规子群最多还是使用定义本身
+
+##### 定理 1.3.9
+设 $H<G$，则等价关系 $R: a\,R\,b \Leftrightarrow a^{-1}b \in H$ 是 $G$ 的同余关系，当且仅当 $H \lhd G$，这时候，$G/H$ 对于诱导的运算构成一个群，称为 $G$ 对于 $H$ 的商群，极为 $G/H$
+
+*Proof*
+
+若 $H \lhd G$，则对于任意的 $a_1, a_2,b_1,b_2 \in G$，且满足 $a_1\,R\,b_1, a_2\,R\,b_2$，即 $a_1^{-1}b^{-1} \in H$，有 $(a_1a_2)^{-1}b_1b_2=a_2^{-1}a_1^{-1}b_1b_2=a_2^{-1}(a_1^{-1}b_1)a_2(a_2^{-1}b_2)$
+
+注意到 $H \lhd G$，且 $a_1^{-1}b_1$ 和 $a_2^{-1}b_2$ 属于 $H$，所以 $a_2^{-1}(a_1^{-1}b_1)a_2 \in H$，故 $(a_1a_2)^{-1}b_1b_2 \in H$，故 $R$ 为同余关系
+
+反之，若 $R$ 为同余关系，则 $\forall g \in G,\forall h \in H$，我们注意到 $g^{-1}gh=h \in H$, 因此 $g R gh$，并有 $g R g^{-1}$，故 $e^{-1}(ghg^{-1})\in H$ 即 $ghg^{-1} \in H$，从而 $H$ 是正规子群。
+
+接下来我们可以进一步说明 $G/H$ 是商群：
+
+设 $H \lhd G$，因为 $R$ 为同余关系，即 $G/R=G/H$ 有诱导运算，定义为 $g_1H \cdot g_2H=g_1g_2H$。
+我们来逐一验证群的公理：
+
+1. 结合律：
+  $$
+  (g_1H\cdot g_2H)\cdot g_3H=(g_1g_2H)\cdot g_3H= g_1g_2g_3H
+  $$
+  另一方面，我们有
+  $$
+  g_1H\cdot (g_2H\cdot g_3H)=g_1H\cdot (g_2g_3H)= g_1g_2g_3H
+  $$
+于是，结合律成立
+
+2. 幺元
+  我们知道，对于所有的 $g \in G$，$eH\cdot gH= e\cdot gH= gH$，因此左幺元为 $eH$，右幺元同理可证
+
+3. 逆元
+  对于一切的 $g \in G$，$g^{-1}HgH=g^{-1}gH=eH$，因此 $gH$ 的左逆为 $g^{-1}H$，右逆同理可证
+
+因此我们可以得知，$G/H$ 是商群。
+
+<p align="right">Q.E.D.</p>
+
+##### 例8
+对于任何的群，$\{e\}$ 和其自身是他自己的正规子群，$G/\{e\}=G$，基数为 $|G|$；$G/G=\{G\}$，基数为 $1$
+
+##### 例9
+$\{\mathbb{Z},+\}$ 为 Abel 群， 其中 $m \in \mathbb{N}$，且有 $m\mathbb{Z} \lhd \mathbb{Z}$，$\mathbb{Z}/m\mathbb{Z}=\{\overline{0},\overline{2},\dots,\overline{m-1},\}$ 为商群，记为 $\mathbb{Z}/m\mathbb{Z}$，称为模 $m$ 的剩余类加群；
+
+其运算定义为
+$$
+\overline{r_1}+\overline{r_2}=\overline{(r_1+r_2)\ mod\ m}
+$$
 
 
 

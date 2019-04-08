@@ -2,7 +2,8 @@
 title: testing
 date: 2019-01-10 14:49:23
 category:
-    - 其它
+    - 手工实践
+    - 搭博客
 tags:
     - 博客测试
 mathjax: true
