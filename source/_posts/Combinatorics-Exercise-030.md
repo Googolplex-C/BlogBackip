@@ -6,7 +6,7 @@ mathjax: true
 category:
   - 数学
   - 组合数学
-  - 抽屉原理
+  - 计数组合
 tags:
   - 习题
   - 抽屉原理
